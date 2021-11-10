@@ -1,0 +1,36 @@
+﻿@model List<PracticaSegundoParcial_CFBQ.Dominio.Enrollements>
+@{
+    ViewData["Title"] = "EnrollementsList";
+}
+
+<h1>EnrollementsList</h1>
+
+<br />
+<h3>@Html.ActionLink("Register", "EnrollStudents")</h3>
+<br />
+<table id="mitabla" class="table table-dark table-striped">
+    <th>
+        Title
+    </th>
+    <th>
+        Last Name
+    </th>
+    <th>
+        First Midle Name
+    </th>
+    <th>
+        Grade
+    </th>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Course.Title</td>
+                <td>@item.Students.LastName</td>
+                <td>@item.Students.FirtsMidName</td>
+                <td>@item.Grade</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PracticaSegundoParcial_CFBQ.Dominio.Students>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<br />
+<h3>@Html.ActionLink("Registrar", "Students")</h3>
+<br />
+<table table class="table table-dark table-striped">
+    <th>
+        ID
+    </th>
+    <th>
+        Last Name
+    </th>
+    <th>
+        First Midle Name
+    </th>
+    <th>
+        Enrollement Date
+    </th>
+    <th>
+        Acciones
+    </th>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentId</td>
+                <td>@item.LastName</td>
+                <td>@item.FirtsMidName</td>
+                <td>@item.EnrollementsDate</td>
+                <td>
+                    @Html.ActionLink("Editar", "PreStudents", new { id = item.StudentId},
+                    new { @class = "btn btn-outline-warning" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

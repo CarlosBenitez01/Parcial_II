@@ -1,0 +1,18 @@
+﻿@model PracticaSegundoParcial_CFBQ.Models.ViewModel.EnrollementViewModel
+@{
+    ViewData["Title"] = "EnrollStudents";
+}
+<link rel="stylesheet" href="~/css/EnrollStudent.css"/>
+<h1>Enroll Students</h1>
+
+@using (Html.BeginForm("Enroll", "Enrollements"))
+{
+    @Html.DropDownListFor(a => a.CourseID, new SelectList(ViewBag.estadoListCourse, "Value", "Text"), "Seleciona un curso", new { @class = "form-control"})
+    <br />
+    @Html.DropDownListFor(b => b.StudentsID, new SelectList(ViewBag.estadoListStudents, "Value", "Text"), "Seleciona un Estudiante", new { @class = "form-control"})
+    <br />
+    @Html.DropDownListFor(c => c.Grade, new SelectList(ViewBag.estadoListGrade, "Value", "Text"), "Seleciona un Grado", new { @class = "form-control"})
+    <br />
+
+    <input type="submit" value="Enter">
+}

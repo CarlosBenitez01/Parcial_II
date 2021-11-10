@@ -1,0 +1,31 @@
+﻿@model PracticaSegundoParcial_CFBQ.Models.ViewModel.StudentsViewModel
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1>Students</h1>
+
+<link rel="stylesheet" href="~/css/Students.css"/>
+
+<div class="form">
+
+    @using (Html.BeginForm("Ins_mod_student", "Students"))
+    {
+        @Html.TextBoxFor(m => m.Id, new { type = "hidden" })
+
+        @Html.LabelFor(m => m.LastName, new { @class = "form__label" })
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form__input" })
+        @Html.ValidationMessageFor(m => m.LastName)
+        <br>
+        @Html.LabelFor(m => m.FirstMidName, new { @class = "form__label" })
+        @Html.TextBoxFor(m => m.FirstMidName, new { @class = "form__input" })
+        @Html.ValidationMessageFor(m => m.FirstMidName)
+        <br>
+        @Html.LabelFor(m => m.EnrollementsDate, new { @class = "form__label" })
+        @Html.TextBoxFor(m => m.EnrollementsDate, htmlAttributes:new { @class = "form__input", type="date"})
+        @Html.ValidationMessageFor(m => m.EnrollementsDate)
+        <br>
+
+        <input type="submit" class="button" value="Registrar/modificar">
+    }
+</div>
